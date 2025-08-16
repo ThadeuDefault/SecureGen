@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password and UUID Generator - SecureGen</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <h1>SecureGen</h1>
+                </div>
+                <p class="subtitle">Advanced Secure Password and UUID Generator</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Password Generation Section -->
+            <section class="generator-section password-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h2>Random Password Generator</h2>
+                </div>
+                
+                <div class="generator-card">
+                    <div class="output-container">
+                        <div class="output-field">
+                            <input type="text" id="passwordOutput" class="output-input" placeholder="Your password will appear here..." readonly>
+                            <div class="field-actions">
+                                <button id="copyPassword" class="action-btn copy-btn" title="Copy password">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <button id="regeneratePassword" class="action-btn regenerate-btn" title="Generate new password">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="strength-indicator">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strengthFill"></div>
+                            </div>
+                            <span class="strength-text" id="strengthText">Password Strength</span>
+                        </div>
+                    </div>
+
+                    <div class="controls-container">
+                        <div class="length-control">
+                            <label for="passwordLength">Length</label>
+                            <div class="spinner-container">
+                                <button class="spinner-btn" id="decreaseLength">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="number" id="passwordLength" value="20" min="4" max="128">
+                                <button class="spinner-btn" id="increaseLength">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="options-container">
+                            <div class="option-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="includeUppercase" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Uppercase (A-Z)</span>
+                                </label>
+                                
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="includeLowercase" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Lowercase (a-z)</span>
+                                </label>
+                                
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="includeNumbers" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Numbers (0-9)</span>
+                                </label>
+                                
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="includeSymbols" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Symbols (!@#$%^&*)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- UUID Generation Section -->
+            <section class="generator-section uuid-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h2>Random UUID Generator</h2>
+                </div>
+                
+                <div class="generator-card">
+                    <div class="output-container">
+                        <div class="output-field">
+                            <input type="text" id="uuidOutput" class="output-input" placeholder="Your UUID will appear here..." readonly>
+                            <div class="field-actions">
+                                <button id="copyUuid" class="action-btn copy-btn" title="Copy UUID">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <button id="regenerateUuid" class="action-btn regenerate-btn" title="Generate new UUID">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="uuid-info">
+                            <span class="info-text">UUID v4 (Universally Unique Identifier)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 SecureGen. Thadeu Default. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Youtube</a>
+                    <a href="#" class="footer-link">GitHub</a>
+                    <a href="#" class="footer-link">Support</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Toast for notifications -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <span class="toast-message"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
